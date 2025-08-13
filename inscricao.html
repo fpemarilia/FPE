@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Formação Pela Escola - FNDE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #009688;
+            --accent-color: #4caf50;
+            --text-color: #333333;
+            --background-color: #f5f9ff;
+            --card-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .enrollment {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .enrollment-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .enrollment-steps {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .enrollment-steps h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .enrollment-steps h3 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .step-number {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .requirements {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .requirements h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .requirements h3 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .requirements-list {
+            list-style: none;
+        }
+        
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .requirements-list li i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .calendar {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+        
+        .calendar h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .calendar h3 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .calendar-periods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .period {
+            background-color: rgba(0, 150, 136, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .period h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .period p {
+            font-size: 18px;
+        }
+        
+        .faq {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq h3 i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .faq-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question i {
+            color: var(--secondary-color);
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            font-size: 18px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-2px);
+        }
+        
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 20px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 32px;
+            }
+            
+            .enrollment-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style> */ -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://sfile.chatglm.cn/images-ppt/fda1cb2a0edb.jpg" alt="Logo Formação Pela Escola">
+                    <h1>Formação Pela Escola</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h2>Inscrição nos Cursos</h2>
+            <p>Participe do Formação Pela Escola e contribua para a melhoria da educação brasileira</p>
+        </div>
+    </section>
+    
+    <section class="enrollment">
+        <div class="container">
+            <div class="enrollment-content">
+                <div class="enrollment-steps">
+                    <h3><i class="material-icons">how_to_reg</i> Como se inscrever</h3>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Preencha o formulário</h4>
+                            <p>Acesse o formulário de pré-matrícula e preencha com seus dados completos e indicação do(s) curso(s) de interesse.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Envie ao tutor</h4>
+                            <p>Envie o formulário preenchido ao tutor do Formação Pela Escola.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Aguarde confirmação</h4>
+                            <p>Aguarde a confirmação da sua matrícula e o acesso ao ambiente virtual de aprendizagem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="requirements">
+                    <h3><i class="material-icons">assignment_ind</i> Requisitos para participação</h3>
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="material-icons">check_circle</i>
+                            <span>Ser profissional de educação da rede pública de ensino</span>
+                        </li>
+                        <li>
+                            <i class="material-icons">check_circle</i>
+                            <span>Ser técnico ou gestor público estadual, municipal ou escolar</span>
+                        </li>
+                        <li>
+                            <i class="material-icons">check_circle</i>
+                            <span>Ser membro do comitê local do PAR</span>
+                        </li>
+                        <li>
+                            <i class="material-icons">check_circle</i>
+                            <span>Ser membro dos conselhos de controle social da educação</span>
+                        </li>
+                        <li>
+                            <i class="material-icons">check_circle</i>
+                            <span>Ser cidadão interessado em conhecer as ações e programas do FNDE</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="calendar">
+                <h3><i class="material-icons">event</i> Calendário de ofertas</h3>
+                <p style="font-size: 18px; margin-bottom: 30px;">Os cursos são ofertados em períodos bimestrais durante todo o ano:</p>
+                <div class="calendar-periods">
+                    <div class="period">
+                        <h4>1º período</h4>
+                        <p>janeiro e fevereiro</p>
+                    </div>
+                    <div class="period">
+                        <h4>2º período</h4>
+                        <p>março e abril</p>
+                    </div>
+                    <div class="period">
+                        <h4>3º período</h4>
+                        <p>maio e junho</p>
+                    </div>
+                    <div class="period">
+                        <h4>4º período</h4>
+                        <p>julho e agosto</p>
+                    </div>
+                    <div class="period">
+                        <h4>5º período</h4>
+                        <p>setembro e outubro</p>
+                    </div>
+                    <div class="period">
+                        <h4>6º período</h4>
+                        <p>novembro e dezembro</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq">
+                <h3><i class="material-icons">help_outline</i> Perguntas Frequentes</h3>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Quantas vagas são oferecidas por turma?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>As vagas são limitadas a 40 alunos por turma, garantindo um acompanhamento mais personalizado por parte dos tutores.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Qual é a duração de cada curso?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Cada curso possui carga horária entre 40 e 60 horas, com previsão de 8 horas para encontros presenciais (definidos pela tutoria), desde que sua conclusão não exceda o prazo de 45 dias.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Onde encontro o formulário de inscrição?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O formulário encontra-se disponível na Internet, no link: http://www.fnde.gov.br/programas/formacao-pela-escola/formacao-pela-escola-consultas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Como funciona a avaliação dos cursos?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A avaliação ocorre de duas formas: autoavaliação e avaliação realizada pelo tutor. Caso seja obtido aproveitamento satisfatório, o certificado de conclusão do curso é concedido ao cursista.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Quais materiais didáticos são utilizados?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O curso conta com material didático em versão eletrônica, disponibilizado no ambiente virtual de aprendizagem Moodle. Esse material é composto por Caderno de estudos, Caderno de atividades e vídeos que auxiliam o cursista e o tutor na condução das atividades pedagógicas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Quem acompanha os cursistas durante o curso?</span>
+                            <i class="material-icons">expand_more</i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O cursista é acompanhado por um sistema de apoio à aprendizagem realizado pelo tutor do Formação, que desempenha o papel de orientador técnico e pedagógico. Além disso, o Programa conta com a equipe gestora estadual ou distrital, que monitora e avalia as atividades de tutoria e os resultados de execução após o curso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h3>Pronto para se inscrever?</h3>
+            <p>Acesse o formulário de pré-matrícula e dê o primeiro passo para sua formação</p>
+            <a href="https://bit.ly/fpe25" target="_blank" class="btn btn-large">Acessar formulário de inscrição</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Formação Pela Escola</h4>
+                    <p>- Programa Nacional de Formação Continuada a Distância nas Ações do FNDE</p>
+                    <p class="pbold"> - Unidade Regional de Ensino de Marília</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="material-icons">email</i> fpemarilia@gmail.com</li>
+                        <li><i class="material-icons">phone</i>14-34028200</li>
+                        <li><i class="material-icons">location_on</i> av. Pedro de Toledo, 542, Marília - SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Unidade Regional de Ensino de Marília - UREMAR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

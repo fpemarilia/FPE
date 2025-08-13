@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais - Formação Pela Escola - FNDE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #009688;
+            --accent-color: #4caf50;
+            --text-color: #333333;
+            --background-color: #f5f9ff;
+            --card-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .materials {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .materials-intro {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .materials-intro p {
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .material-card {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .material-icon {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .material-icon i {
+            font-size: 60px;
+        }
+        
+        .material-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .material-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .material-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .material-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .material-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .material-features li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            align-self: flex-start;
+        }
+        
+        .btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-2px);
+        }
+        
+        .access-section {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+        
+        .access-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .access-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .access-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .access-steps {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .access-steps li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .access-steps li i {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        
+        .access-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .examples-section {
+            margin-bottom: 60px;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .example-card {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .example-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .example-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .example-card:hover .example-image img {
+            transform: scale(1.05);
+        }
+        
+        .example-content {
+            padding: 25px;
+        }
+        
+        .example-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .example-content p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 20px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 32px;
+            }
+            
+            .access-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://sfile.chatglm.cn/images-ppt/fda1cb2a0edb.jpg" alt="Logo Formação Pela Escola">
+                    <h1>Formação Pela Escola</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h2>Materiais Didáticos</h2>
+            <!-- <p>Acesse os materiais de estudo para os cursos do Formação Pela Escola</p> -->
+        </div>
+    </section>
+    
+    <section class="materials">
+        <div class="container">
+            <div class="materials-intro">
+                <p>O Formação Pela Escola disponibiliza materiais didáticos em versão eletrônica, acessíveis através do ambiente virtual de aprendizagem Moodle. Esses materiais são essenciais para o acompanhamento dos cursos e são compostos por diferentes formatos para atender às diversas necessidades de aprendizagem.</p>
+            </div>
+            
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="material-icons">menu_book</i>
+                    </div>
+                    <div class="material-content">
+                        <h3>Caderno de Estudos</h3>
+                        <p>Material principal que contém o conteúdo teórico dos cursos, organizado em unidades e módulos de aprendizagem.</p>
+                        <ul class="material-features">
+                            <li><i class="material-icons">check_circle</i> Conteúdo atualizado</li>
+                            <li><i class="material-icons">check_circle</i> Organizado por temas</li>
+                            <li><i class="material-icons">check_circle</i> Formato PDF</li>
+                        </ul>
+                        <!-- <a href="#" class="btn">Acessar material</a> -->
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <div class="material-content">
+                        <h3>Caderno de Atividades</h3>
+                        <p>Material complementar com exercícios e atividades práticas para fixação do conteúdo e autoavaliação.</p>
+                        <ul class="material-features">
+                            <li><i class="material-icons">check_circle</i> Exercícios práticos</li>
+                            <li><i class="material-icons">check_circle</i> Atividades avaliativas</li>
+                            <li><i class="material-icons">check_circle</i> Formato interativo</li>
+                        </ul>
+                        <!-- <a href="#" class="btn">Acessar material</a> -->
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <div class="material-icon">
+                        <i class="material-icons">play_circle_filled</i>
+                    </div>
+                    <div class="material-content">
+                        <h3>Vídeos</h3>
+                        <p>Recursos audiovisuais que complementam o conteúdo dos cadernos, com explicações detalhadas e exemplos práticos.</p>
+                        <ul class="material-features">
+                            <li><i class="material-icons">check_circle</i> Vídeos explicativos</li>
+                            <li><i class="material-icons">check_circle</i> Entrevistas com especialistas</li>
+                            <li><i class="material-icons">check_circle</i> Estudos de caso</li>
+                        </ul>
+                        <!-- <a href="#" class="btn">Acessar material</a> -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="access-section">
+                <div class="access-content">
+                    <div class="access-text">
+                        <h3>Como acessar os materiais</h3>
+                        <p>Os materiais didáticos do Formação Pela Escola estão disponíveis no ambiente virtual de aprendizagem Moodle, acessível a todos os cursistas matriculados nos cursos.</p>
+                        <ol class="access-steps">
+                            <li><i>1</i> Faça login no ambiente virtual com seu usuário e senha</li>
+                            <li><i>2</i> Acesse o curso em que está matriculado</li>
+                            <li><i>3</i> Na página do curso, clique na seção "Materiais Didáticos"</li>
+                            <li><i>4</i> Selecione o material que deseja acessar</li>
+                        </ol>
+                        <a href="https://www.fnde.gov.br/ava/" target="_blank" class="btn">Acessar ambiente virtual</a>
+                    </div>
+                    <div class="access-image">
+                        <img src="https://sfile.chatglm.cn/images-ppt/c325e59b32db.jpg" alt="Ambiente virtual de aprendizagem">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="examples-section">
+                <h3 class="section-title">Exemplos de Materiais</h3>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="https://sfile.chatglm.cn/images-ppt/706ac9f8a549.png" alt="Exemplo de material didático">
+                        </div>
+                        <div class="example-content">
+                            <h4>Plataforma de EaD</h4>
+                            <p>Ambiente virtual onde os materiais são disponibilizados e as atividades são realizadas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="https://sfile.chatglm.cn/images-ppt/3055207fcac9.png" alt="Exemplo de vídeo educativo">
+                        </div>
+                        <div class="example-content">
+                            <h4>Vídeos Educacionais</h4>
+                            <p>Recursos audiovisuais que enriquecem o processo de aprendizagem.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="https://sfile.chatglm.cn/images-ppt/98c350b57690.png" alt="Exemplo de acesso multiplataforma">
+                        </div>
+                        <div class="example-content">
+                            <h4>Acesso Multiplataforma</h4>
+                            <p>Os materiais podem ser acessados de diferentes dispositivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h3>Acesse os materiais dos cursos</h3>
+            <p>Entre no ambiente virtual de aprendizagem e tenha acesso a todos os materiais didáticos do Formação Pela Escola</p>
+            <a href="https://www.fnde.gov.br/ava/" target="_blank" class="btn btn-large">Acessar Ambiente Virtual</a>
+        </div>
+    </section>
+    
+    <footer>
+       <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Formação Pela Escola</h4>
+                    <p>- Programa Nacional de Formação Continuada a Distância nas Ações do FNDE</p>
+                    <p class="pbold"> - Unidade Regional de Ensino de Marília</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="material-icons">email</i> fpemarilia@gmail.com</li>
+                        <li><i class="material-icons">phone</i>14-34028200</li>
+                        <li><i class="material-icons">location_on</i> av. Pedro de Toledo, 542, Marília - SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Unidade Regional de Ensino de Marília - UREMAR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
