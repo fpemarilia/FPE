@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas por Ano - Formação Pela Escola - FNDE/UREMAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #009688;
+            --accent-color: #4caf50;
+            --text-color: #333333;
+            --background-color: #f5f9ff;
+            --card-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .table-section {
+            padding: 60px 0;
+        }
+        
+        .table-container {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: rgba(0, 150, 136, 0.05);
+        }
+        
+        tbody tr:hover {
+            background-color: rgba(0, 150, 136, 0.1);
+        }
+        
+        .year {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 22px;
+            width: 100px;
+        }
+        
+        .program {
+            font-size: 18px;
+        }
+        
+        .program-list {
+            list-style: none;
+        }
+        
+        .program-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .program-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            opacity: 1;
+        }
+        
+        .footer-section ul li i {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 32px;
+            }
+            
+            table {
+                font-size: 16px;
+            }
+            
+            th, td {
+                padding: 15px 10px;
+            }
+            
+            .year {
+                font-size: 18px;
+                width: 80px;
+            }
+            
+            .program {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://sfile.chatglm.cn/images-ppt/fda1cb2a0edb.jpg" alt="Logo Formação Pela Escola">
+                    <h1>Formação Pela Escola</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h2>Programas por Ano</h2>
+            <p>Conheça os programas de formação continuada oferecidos pelo Formação Pela Escola ao longo dos anos</p>
+        </div>
+    </section>
+    
+    <section class="table-section">
+        <div class="container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ano</th>
+                            <th>Programas/Cursos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="year">2025</td>
+                            <td class="program">
+                                <ul class="program-list">
+                                    <li>Competências Básicas</li>
+                                    <li>Prestação de Contas</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="year">2023</td>
+                            <td class="program">
+                                <ul class="program-list">
+                                    <li>Política Pública de Transporte Escolar SP</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="year">2022</td>
+                            <td class="program">
+                                <ul class="program-list">
+                                    <li>Programa Nacional do Livro Didático</li>
+                                    <li>Programa Nacional de Alimentação Escolar</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="year">2021</td>
+                            <td class="program">
+                                <ul class="program-list">
+                                    <li>Programa Dinheiro Direto na Escola</li>
+                                    <li>Programa Nacional de Alimentação Escolar</li>
+                                    <li>Política Pública de Transporte Escolar</li>
+                                    <li>Censo Escolar da Educação Básica</li>
+                                    <li>Competências Básicas</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Formação Pela Escola</h4>
+                    <p>Programa Nacional de Formação Continuada a Distância nas Ações do FNDE</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Inscrição</a></li>
+                        <li><a href="#">Materiais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="material-icons">email</i> formacao@fnde.gov.br</li>
+                        <li><i class="material-icons">phone</i> 0800 616161</li>
+                        <li><i class="material-icons">location_on</i> Esplanada dos Ministérios, Bloco L, Edifício Sede, CEP 70047-900, Brasília - DF</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fundo Nacional de Desenvolvimento da Educação - FNDE. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

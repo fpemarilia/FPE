@@ -15,6 +15,7 @@
     --card-color: #ffffff;
     --header-height: 60px;
     --header-height-mobile: 60px;
+    text-decoration: none;
 }
 
 /* ===== ESTILOS GLOBAIS ===== */
@@ -230,14 +231,24 @@ nav ul li a:hover {
     font-size: 42px;
     margin-bottom: 20px;
     font-weight: 700;
+    text-decoration: none;
+    color: white;
+    
 }
 
+
+.page-header a{
+    color: inherit;
+    text-decoration: none;
+
+}
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 60px 0;
     text-align: center;
     margin-top: var(--header-height);
+   
 }
 
 
